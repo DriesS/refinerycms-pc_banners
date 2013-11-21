@@ -1,3 +1,5 @@
+require 'acts_as_indexed'
+
 module Refinery
   module Banners
     class Banner < Refinery::Core::BaseModel
@@ -27,13 +29,3 @@ module Refinery
     end
   end
 end
-
-#t.string :name
-#t.string :title
-#t.string :description
-#t.integer :image_id
-#t.string :url
-#t.boolean :is_active
-#t.date :start_date
-#t.date :expiry_date
-#t.integer :position
