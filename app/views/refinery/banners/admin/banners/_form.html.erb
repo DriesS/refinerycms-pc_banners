@@ -41,6 +41,13 @@
 
     </div>
 
+    <% if Refinery::I18n.frontend_locales %>
+      <div class='field'>
+        <%= f.label :locale -%>
+        <%= f.select :locale, Refinery::I18n.frontend_locales, include_blank: true  -%>
+      </div>
+    <% end %>
+
     <div class='field'>
       <%= f.label :is_active -%>
       <%= f.check_box :is_active, :checked => @banner[:is_active]  -%>

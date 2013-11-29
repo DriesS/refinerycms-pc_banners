@@ -7,7 +7,7 @@ module Refinery
 
       acts_as_indexed :fields => [:name, :url, :title, :description]
 
-      attr_accessible :name, :title, :description, :image_id, :url, :is_active, :start_date, :expiry_date, :position, :page_ids
+      attr_accessible :name, :title, :description, :image_id, :url, :is_active, :start_date, :expiry_date, :position, :page_ids, :locale
 
       validates :name, :presence => true
       validates_presence_of :start_date
@@ -24,6 +24,9 @@ module Refinery
       scope :active, where(:is_active => true)
       scope :published, lambda {
         not_expired.active.where("start_date <= ?", Time.now).order(:position)
+      }
+      scope :publish_in_current_locale, lambda{
+        not_expired.active.where("start_date <= ?", Time.now).where("locale = ? or locale = ''", ::I18n.locale)
       }
 
     end
