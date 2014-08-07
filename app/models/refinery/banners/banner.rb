@@ -26,7 +26,7 @@ module Refinery
         not_expired.active.where("start_date <= ?", Time.now).order(:position)
       }
       scope :publish_in_current_locale, lambda{
-        not_expired.active.where("start_date <= ?", Time.now).where("locale = ? or locale = ''", ::I18n.locale)
+        not_expired.active.where("start_date <= ?", Time.now).where("locale = ? or locale = ''", ::I18n.locale).order(:position)
       }
 
     end
