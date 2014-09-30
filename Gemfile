@@ -2,7 +2,9 @@ source "http://rubygems.org"
 
 gemspec
 
-gem 'refinerycms', '~> 2.0.0'
+git 'git://github.com/refinery/refinerycms.git', :branch => 'master' do
+  gem 'refinerycms'
+end
 
 # Refinery/rails should pull in the proper versions of these
 group :assets do

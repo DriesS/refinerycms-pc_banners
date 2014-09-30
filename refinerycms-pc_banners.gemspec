@@ -14,8 +14,8 @@ Gem::Specification.new do |s|
   s.homepage          = 'https://github.com/julesce/refinerycms-pods'
 
   # Runtime dependencies
-  s.add_dependency             'refinerycms-pages',    '~> 2.1.0'
+  s.add_dependency             'refinerycms-pages', '~> 3.0.0.dev'
 
   # Development dependencies (usually used for testing)
-  s.add_development_dependency 'refinerycms-testing', '~> 2.1.0'
+  s.add_development_dependency 'refinerycms-testing', '~> 3.0.0.dev'
 end
