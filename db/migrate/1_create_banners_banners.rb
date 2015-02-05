@@ -11,7 +11,6 @@ class CreateBannersBanners < ActiveRecord::Migration
       t.date :start_date
       t.date :expiry_date
       t.integer :position
-      t.integer :position
 
       t.timestamps
     end
